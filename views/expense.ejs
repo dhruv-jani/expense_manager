@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title> 
+    <link rel="stylesheet" href="/stylesheets/expense.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <!-- <div class="main flex justify-center mt-32 w-[100vw] h-[100vh]">
+        <form class="addExpense flex flex-col w-96 h-32" action="/add" method="post">
+            <select name="catagory" id="categories" class="w-full mb-4 border border-gray-400 py-2 px-2" required>
+                <option value="grocery" class="text-black" selected>Grocery</option>
+                <option value="vehicle" class="text-black">Vehicle</option>
+                <option value="travelling" class="text-black">Travelling</option>
+                <option value="entertainment" class="text-black">Entertainment</option>
+                <option value="utilities" class="text-black">Utilities</option>
+                <option value="healthcare" class="text-black">Healthcare</option>
+                <option value="education" class="text-black">Education</option>
+                <option value="clothing" class="text-black">Clothing</option>
+                <option value="housing" class="text-black">Housing</option>
+                <option value="personal care" class="text-black">Personal Care</option>
+            </select>
+            
+            <input type="text" name="expensename" placeholder="Expense name" class="px-8 py-3 border-2 w-full mb-5" required>
+            <input type="number" name="amount" placeholder="Expense amount" class="px-8 py-3 border-2 w-full" required>
+            <input type="submit" value="Add Expense" class="bg-green-600 text-white font-bold w-1/2 inline-block my-5 px-3 py-2 rounded-2xl text-center cursor-pointer">
+        </form>
+    </div> -->
+
+    <div class="main flex justify-center mt-32 w-[100vw]" id="main">
+        <form class="addExpense flex flex-col w-96 bg-green-100 rounded-lg shadow-lg p-6" action="/add" method="post">
+            <select name="catagory" id="categories" class="w-full mb-4 border border-green-400 py-2 px-2 rounded-lg" required>
+                <option value="grocery" class="text-green-900">Grocery</option>
+                <option value="vehicle" class="text-green-900">Vehicle</option>
+                <option value="travelling" class="text-green-900">Travelling</option>
+                <option value="entertainment" class="text-green-900">Entertainment</option>
+                <option value="utilities" class="text-green-900">Utilities</option>
+                <option value="healthcare" class="text-green-900">Healthcare</option>
+                <option value="education" class="text-green-900">Education</option>
+                <option value="clothing" class="text-green-900">Clothing</option>
+                <option value="housing" class="text-green-900">Housing</option>
+                <option value="personal care" class="text-green-900">Personal Care</option>
+            </select>
+            
+            <input type="text" name="expensename" placeholder="Expense name" class="px-8 py-3 border-2 border-green-400 w-full mb-5 rounded-lg" required>
+            <input type="number" name="amount" placeholder="Expense amount" class="px-8 py-3 border-2 border-green-400 w-full rounded-lg" required>
+            <input type="submit" value="Add Expense" class="bg-green-600 hover:bg-green-700 text-white font-bold w-full inline-block my-5 px-3 py-2 rounded-lg text-center cursor-pointer">
+        </form>
+    </div>
+    
+</body>
+</html>

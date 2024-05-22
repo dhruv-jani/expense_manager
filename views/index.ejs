@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="icon" type="image/x-icon" href="/images/expense.jpg">
+    <title>Expense Managing became easier</title>
+    <style>
+        .header_logo {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .form-control {
+            box-shadow: none;
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        .navbar {
+            display: flex;
+            background: #fff;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom: 1px solid #dfe3e8;
+            border-radius: 0;
+        }
+
+        .footer_logo {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .nav-link img {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin: -8px 0;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .navbar .navbar-brand {
+            position: relative;
+            bottom: 10px;
+            text-decoration: none;
+            padding-left: 0;
+            font-size: 20px;
+            padding-right: 50px;
+        }
+
+        .navbar .navbar-brand b {
+            color: #33cabb;
+        }
+
+        .navbar .form-inline {
+            display: inline-block;
+        }
+
+        .navbar a {
+            color: #888;
+            font-size: 15px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding-right: 35px;
+            border-color: #dfe3e8;
+            border-radius: 4px !important;
+            box-shadow: none
+        }
+
+        .search-box .input-group-text {
+            min-width: 35px;
+            border: none;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            z-index: 9;
+            padding: 7px;
+            height: 100%;
+        }
+
+        .search-box i {
+            color: #a0a5b1;
+            font-size: 19px;
+        }
+
+        .navbar .sign-up-btn {
+            min-width: 110px;
+            max-height: 36px;
+        }
+
+        .navbar .dropdown-menu {
+            color: #999;
+            font-weight: normal;
+            border-radius: 1px;
+            border-color: #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
+
+        .navbar a,
+        .navbar a:active {
+            color: #888;
+            padding: 8px 20px;
+            background: transparent;
+            line-height: normal;
+        }
+
+        .navbar .navbar-form {
+            border: none;
+        }
+
+        .navbar .action-form {
+            width: 280px;
+            padding: 20px;
+            left: auto;
+            right: 0;
+            font-size: 14px;
+        }
+
+        .navbar .action-form a {
+            color: #33cabb;
+            padding: 0 !important;
+            font-size: 14px;
+        }
+
+        .navbar .action-form .hint-text {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .navbar .btn-primary,
+        .navbar .btn-primary:active {
+            color: #fff;
+            background: #33cabb !important;
+            border: none;
+        }
+
+        .navbar .btn-primary:hover,
+        .navbar .btn-primary:focus {
+            color: #fff;
+            background: #31bfb1 !important;
+        }
+
+        .navbar .social-btn .btn,
+        .navbar .social-btn .btn:hover {
+            color: #fff;
+            margin: 0;
+            padding: 0 !important;
+            font-size: 13px;
+            border: none;
+            transition: all 0.4s;
+            text-align: center;
+            line-height: 34px;
+            width: 47%;
+            text-decoration: none;
+        }
+
+        .navbar .social-btn .facebook-btn {
+            background: #507cc0;
+        }
+
+        .navbar .social-btn .facebook-btn:hover {
+            background: #4676bd;
+        }
+
+        .navbar .social-btn .twitter-btn {
+            background: #64ccf1;
+        }
+
+        .navbar .social-btn .twitter-btn:hover {
+            background: #4ec7ef;
+        }
+
+        .navbar .social-btn .btn i {
+            margin-right: 5px;
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+        }
+
+        .or-seperator {
+            margin-top: 32px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .or-seperator b {
+            color: #666;
+            padding: 0 8px;
+            width: 30px;
+            height: 30px;
+            font-size: 13px;
+            text-align: center;
+            line-height: 26px;
+            background: #fff;
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            position: relative;
+            top: -15px;
+            z-index: 1;
+        }
+
+        .navbar .action-buttons .dropdown-toggle::after {
+            display: none;
+        }
+
+        .form-check-label input {
+            position: relative;
+            top: 1px;
+        }
+
+        @media (min-width: 1200px) {
+            .form-inline .input-group {
+                width: 300px;
+                margin-left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .dropdown-menu.action-form {
+                width: 100%;
+                padding: 10px 15px;
+                background: transparent;
+                border: none;
+            }
+
+            .navbar .form-inline {
+                display: block;
+            }
+
+            .navbar .input-group {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand">Expense <b>Manager</b></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link">Home</a>
+                <a href="/about" class="nav-item nav-link">About</a>
+
+                <a href="/contact" class="nav-item nav-link">Contact</a>
+                <a href="/login" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Login</a>
+                <a href="/register" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">SignUp</a>
+                <div class="navigation">
+                    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+                </div>
+    </nav>
+    <header class="header">
+        <div class="header__logo-box">
+            <img src="/images/expense.jpg" alt="logo" class="header_logo">
+        </div>
+
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary__main">Expense Manager</span>
+                <span class="heading-primary__sub">is where every Expense is managed</span>
+            </h1>
+
+
+        </div>
+    </header>
+
+    <main>
+        <section class="section-about">
+            <div class="u-center-text u-margin-bottom-large">
+                <h2 class="heading-secondary">
+                    Exciting Management website for literally everyone
+                </h2>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-2">
+                    <h3 class="heading-tertiary u-margin-bottom-small">You're Going To Love our project
+                    </h3>
+                    <p class="paragraph">
+                        It's designed to revolutionize the way you handle finances. No more hassle, just seamless
+                        expense tracking and financial management.
+                    </p>
+
+                    <h3 class="heading-tertiary u-margin-bottom-small">Live Adventerous Like You Never Have
+                        Before</h3>
+                    <p class="paragraph">
+                        Embrace a life of adventure, free from financial worries, with Expense Manager by your side.
+                        Let's embark on this journey together!
+                    </p>
+
+                </div>
+
+                <div class="col-1-of-2">
+                    <div class="composition">
+                        <img src="/images/boy.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
+                        <img src="/images/note.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
+                        <img src="/images/3.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-features">
+            <div class="row">
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Add expenses</h3>
+                        <p class="feature-box__text">
+                            Expense Manager makes it effortless to add expenses on the go. No more hassle - simply input
+                            your expenses and stay on top of your spending.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Set your budget</h3>
+                        <p class="feature-box__text">
+                            Take control of your finances with Expense Manager's budgeting feature. Set budgets for
+                            different categories and manage your spending effectively.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Get alert notifications</h3>
+                        <p class="feature-box__text">
+                            Stay informed about your financial activities with Expense Manager's alert notifications.
+                            Receive timely alerts to help you stay on track with your budget and financial goals.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-tertiary u-margin-bottom-small">Smarter way of expense managing</h3>
+                        <p class="feature-box__text">
+                            Expense Manager offers a smarter approach to managing your expenses. With intuitive features
+                            and powerful tools, it's the ultimate solution for staying organized and in control of your
+                            finances.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-stories">
+            <div class="bg-video">
+                <video class="bg-video__content" autoplay muted loop>
+                    <source src="img/video.mp4" type="video/mp4">
+                    <source src="img/video.webm" type="video/webm">
+                    Your browser is not supported!
+                </video>
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <img src="/images/expense.jpg" alt="Full logo" class="footer_logo">
+        </div>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="/" class="footer__link">Company</a></li>
+                        <li class="footer__item"><a href="/contact" class="footer__link">Contact Us</a></li>
+                        <li class="footer__item"><a href="/" class="footer__link">Careers</a></li>
+                        <li class="footer__item"><a href="/" class="footer__link">Privacy Policy</a></li>
+                        <li class="footer__item"><a href="/" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-1-of-2">
+                <p class="footer__copyright">
+                    Built by <a href="#" class="footer__link">Tech Brains</a> for their online project <a href="#"
+                        class="footer__link">Advanced CSS and Sass</a>. Copyright &copy; by Tech Brains.
+                    You are 100% allowed to use this webpage for both personal and commercial use, but NOT
+                    to claim it as your own design. A credit to the original author, Tech Brains, is
+                    of course highly appreciated!
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
+                <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms
+                    before booking</h3>
+                <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet commodo nulla
+                    facilisi nullam vehicula. Dui nunc mattis enim ut tellus elementum. Viverra adipiscing
+                    at in tellus integer feugiat scelerisque. Nisl rhoncus mattis rhoncus urna neque.
+                    Blandit cursus risus at ultrices mi tempus. Dui vivamus arcu felis bibendum ut
+                    tristique. Hac habitasse platea dictumst vestibulum rhoncus. Nisi vitae suscipit tellus
+                    mauris a diam maecenas sed.</p>
+                <a href="#" class="btn btn--green">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

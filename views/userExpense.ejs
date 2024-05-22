@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Expenses</title>
+    <link rel="stylesheet" href="/stylesheets/userExpense.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</head>
+
+<body class="flex flex-col items-center mt-[4rem] bg-blue-50">
+    <% if(limit - usedBudget <=1000 && limit> 0){ %>
+        <div class="text-red-600 font-bold text-xl bg-red-100" id="limit-reach">You have exceeded your limit</div>
+        <% } %>
+            <div class="w-[80%]">
+                <div class="flex justify-between items-center mb-8">
+                    <h1 class="text-2xl font-bold text-gray-800">Your Budget Limit: <%= limit %>
+                    </h1>
+                    <h1 class="text-2xl font-bold text-red-500">Total used budget: <%= usedBudget %>
+                    </h1>
+                </div>
+
+                <div class="overflow-x-auto max-w-full max-h-screen">
+                    <div class="max-h-[400px] overflow-y-scroll">
+                        <table class="w-full table-auto bg-white rounded-lg shadow-lg">
+                            <thead class="sticky top-0 bg-blue-500 text-white z-10">
+                                <tr>
+                                    <th class="px-6 py-4">Category</th>
+                                    <th class="px-6 py-4">Expense Name</th>
+                                    <th class="px-6 py-4">Expense Amount</th>
+                                    <th class="px-6 py-4">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <% if (userExpenses.length> 0) { %>
+                                    <% userExpenses.forEach(expense=> { %>
+                                        <% expense.catagories.forEach(category=> { %>
+                                            <tr
+                                                class="text-center text-lg hover:bg-blue-100 transition-colors duration-300">
+                                                <td class="px-6 py-4 text-capitalize">
+                                                    <%= category.expenseType %>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <%= category.expenseName %>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <%= category.amount %>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <button
+                                                        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md"
+                                                        id="delete-btn">
+                                                        <lord-icon src="https://cdn.lordicon.com/skkahier.json"
+                                                            trigger="hover" style="width:50px;height:25px; filter: invert(1); z-index: 1;">
+                                                        </lord-icon>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                                <% }); %>
+                                                    <% } else { %>
+                                                        <tr>
+                                                            <td colspan="4" class="px-6 py-4 text-center">No expenses
+                                                                found.</td>
+                                                        </tr>
+                                                        <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <a href="/profile" class="inline-block my-4 text-white bg-green-600 px-[8px] py-[3px] rounded-md">Back
+                    to profile</a>
+            </div>
+            <script>
+                setTimeout(() => {
+                    const div = document.getElementById("limit-reach");
+                    div.style.visibility = "hidden"
+                }, 2000);
+            </script>
+            <script src="/javascripts/delete.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<body>
+    <div class="main">
+        <a href="/">Go to Home</a>
+        <div class="container">
+            <div class="login-container">
+                <h1>Login</h1>
+                <% if(error.length> 0){ %>
+                    <p class="error">
+                        <%= error %>
+                    </p>
+                    <% } %>
+                        <form action="/login" class="form-login" method="post">
+                            <div class="textfield">
+                                <label for="username"> Username</label>
+                                <input type="text" name="username" placeholder="username">
+                            </div>
+                            <div class="textfield">
+                                <label for="password"> Password</label>
+                                <input type="password" name="password" placeholder="password">
+                            </div>
+                            <a class="forgot-password" href="/register">Don't have an account?</a>
+                            <button class="btn-login">Login </button>
+                        </form>
+                        <div>
+                        </div>
+</body>
+
+</html>
